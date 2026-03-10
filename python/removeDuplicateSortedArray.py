@@ -1,23 +1,14 @@
 # Time -> 0(N) Space -> 0(1)
 def removeDuplicate(array: list[int]) -> int:
     k = 1
-    idxToSwap, idx, prev = 1, 1, 0
+    idxToSwap, lastVal = 1, array[0]
 
-    while idx < len(array):
-        while array[idx] == array[prev]:
-            if idx == len(array) - 1:
-                break
-            prev = idx
-            idx += 1
-
-        if idxToSwap != idx and array[idxToSwap] == array[idx]:
-            break
-
-        array[idxToSwap] = array[idx]
-        idxToSwap += 1
-        prev = idx
-        idx += 1
-        k += 1
+    for i in range(1, len(array)):
+        if array[i] != lastVal:
+            array[idxToSwap] = array[i]
+            lastVal = array[i]
+            idxToSwap += 1
+            k += 1
 
     return k
 
