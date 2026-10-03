@@ -30,6 +30,7 @@ func recurse(x, topIdx, botIdx, moves int, top bool, nums []int) int {
 	topMoves := recurse(x, topIdx+1, botIdx, moves+1, true, nums)
 	botMoves := recurse(x, topIdx, botIdx-1, moves+1, false, nums)
 
+	fmt.Println(topMoves, botMoves)
 	return optimal(topMoves, botMoves)
 }
 
@@ -44,7 +45,7 @@ func optimal(i, j int) int {
 }
 
 func main() {
-	fmt.Println(minOperations([]int{1, 1, 4, 2, 3}, 5))
-	fmt.Println(minOperations([]int{5, 6, 7, 8, 9}, 4))
+	// fmt.Println(minOperations([]int{1, 1, 4, 2, 3}, 5))
+	// fmt.Println(minOperations([]int{5, 6, 7, 8, 9}, 4))
 	fmt.Println(minOperations([]int{3, 2, 20, 1, 1, 3}, 10))
 }

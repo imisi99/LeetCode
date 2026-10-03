@@ -15,7 +15,21 @@ func solve(board [][]byte) {
 	}
 }
 
-func explore(i, j int) {
+func explore(i, j, n, m int, board [][]byte) {
+	if board[i][j] == 
+}
+
+func edge(i, j, n, m int) bool {
+	if i == 0 {
+		return true
+	} else if i == n {
+		return true
+	} else if j == 0 {
+		return true
+	} else if j == m {
+		return true
+	}
+	return false
 }
 
 func main() {
